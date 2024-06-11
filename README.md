@@ -22,13 +22,13 @@ https://willh.gitbook.io/typescript-tutorial/basics/declaration-files
 
 ### 2. node-ses & mimemessages
 信件需要符合MIME格式
-資料轉成xlsx/csv的Buffer格式，再以base64編碼成附件
+資料轉成xlsx/csv的Buffer格式，再以base64編碼成附件  
 傳送附件要使用sendRawEmail方法
 
-MIME content-type列表：
+MIME content-type列表：  
 https://www.runoob.com/http/mime-types.html
 
-Sending formatted emails using mimemessage in Nodejs
+Sending formatted emails using mimemessage in Nodejs  
 https://medium.com/@sanket.shivam/sending-formatted-emails-using-mimemessage-in-nodejs-aed526e49ada
 
 ### 3. jest
@@ -56,9 +56,14 @@ https://titangene.github.io/article/jest-typescript.html
 ## AWS SES(Simple Email Service)
 1. IAM role
 創立IAM role，給予SES權限(AmazonSESFullAccess)，將id & secret key放入環境變數（不是放SMTP的設定，secret key長度是40非44）
+![image](https://raw.githubusercontent.com/joeyWuTRKTR/ses-with-typeScript/ca0aa51a2ef5c34455a43ba26ac346382e75d3ac/img/create-iam-user-for-ses.png)
+![image](https://github.com/joeyWuTRKTR/ses-with-typeScript/blob/ca0aa51a2ef5c34455a43ba26ac346382e75d3ac/img/add-policy-for-ses-iam.png?raw=true)
 
 2. AWS SES
 開通一個新的SES服務，驗證信箱，即可發信和收信
+![image](https://github.com/joeyWuTRKTR/ses-with-typeScript/blob/ca0aa51a2ef5c34455a43ba26ac346382e75d3ac/img/add-test-mail-in-ses.png?raw=true)
+![image](https://github.com/joeyWuTRKTR/ses-with-typeScript/blob/ca0aa51a2ef5c34455a43ba26ac346382e75d3ac/img/send-test-mail-by-custom-option-in-ses.png?raw=true)
+![image](https://github.com/joeyWuTRKTR/ses-with-typeScript/blob/ca0aa51a2ef5c34455a43ba26ac346382e75d3ac/img/mail-received-content.png?raw=true)
 
 3. 備註
 AWS SES附件大小限制10MB
@@ -74,14 +79,14 @@ production模式需要額外驗證
 
 
 ## MIME格式
-MIME全名Multipurpose Internet Mail Extensions，即多用途網際網路郵件擴展
-傳統寫法全部小寫
-分為headers(From, To, Subject, content-type, content-transfer-encoding) & body(信件內容)
+MIME全名Multipurpose Internet Mail Extensions，即多用途網際網路郵件擴展  
+傳統寫法全部小寫  
+分為headers(From, To, Subject, content-type, content-transfer-encoding) & body(信件內容)  
 
-content-type:
-通用結構type/subtype，包含文本、圖像、音頻、視頻等多種數據格式，例如text/html、image/jpeg、audio/mpeg
-multipart/mixed定義郵件可以放入多用途的內容，例如文字、附件、圖片等
-content-transfer-encoding: 設定base64，告訴接收端如何解碼郵件內容
+content-type:  
+通用結構type/subtype，包含文本、圖像、音頻、視頻等多種數據格式，例如text/html、image/jpeg、audio/mpeg  
+multipart/mixed定義郵件可以放入多用途的內容，例如文字、附件、圖片等  
+content-transfer-encoding: 設定base64，告訴接收端如何解碼郵件內容  
 
 
 參考：  
