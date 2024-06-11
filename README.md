@@ -1,6 +1,6 @@
 # TypeScript project for sending excel and csv attach by AWS SES
 
-# Tools
+## Tools
 ### 1. TypeScript  
 套件mimemessages沒有宣告TypeScript定義在@types  
 故在 tsconfig.json 定義 baseUrl & path
@@ -17,7 +17,7 @@
 在types資料夾下新增mimemessages資料夾，再新增index.d.ts檔案，宣告該套件的方法型別
 
 來源：  
-TypeScript 新手指南
+TypeScript 新手指南  
 https://willh.gitbook.io/typescript-tutorial/basics/declaration-files
 
 ### 2. node-ses & mimemessages
@@ -49,11 +49,11 @@ package.json加上
 ```
 
 參考：  
-Jest + TypeScript：建置測試環境
+Jest + TypeScript 建置測試環境  
 https://titangene.github.io/article/jest-typescript.html
 
 
-# AWS SES(Simple Email Service)
+## AWS SES(Simple Email Service)
 1. IAM role
 創立IAM role，給予SES權限(AmazonSESFullAccess)，將id & secret key放入環境變數（不是放SMTP的設定，secret key長度是40非44）
 
@@ -70,7 +70,7 @@ production模式需要額外驗證
 ## SMTP
 是email sending協議(send mail to people)    
 依照協議規範把信件給SMTP server  
-搭配POP協議 or IMAP協議讓client端接收信件
+搭配POP協議、IMAP協議讓client端接收信件
 
 
 ## MIME格式
@@ -85,8 +85,8 @@ content-transfer-encoding: 設定base64，告訴接收端如何解碼郵件內�
 
 
 參考：  
-設定 AWS SES identity
+設定 AWS SES identity  
 https://cadaam.medium.com/aws-ses-identity-%E8%A8%AD%E5%AE%9A-91ee980aff6e
 
-MIME 郵件標準
+MIME 郵件標準  
 https://www.tsnien.idv.tw/Security_WebBook/chap9/9-3%20MIME%20%E9%83%B5%E4%BB%B6%E6%A8%99%E6%BA%96.html
